@@ -5,6 +5,7 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const nav = document.querySelector('.nav');
 
 const openModal = function () {
   modal.classList.remove("hidden");
@@ -207,4 +208,18 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 
 });
+
+// Sticky navigation
+
+const initialcords=section1.getBoundingClientRect();
+
+// console.log(initialcords);
   
+window.addEventListener('scroll',function()
+{
+  // console.log(window.scrollY);
+
+  if(window.scrollY > initialcords.top) nav.
+  classList.add('sticky');
+  else nav.classList.remove('sticky');
+})
